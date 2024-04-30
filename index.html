@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1561.0.min.js"></script>
+  <script src="app.js"></script>
+
+  <title>Meeps!</title>
+</head>
+<body class="bg-neutral-900">
+  
+  <div class=" bg-neutral-900 text-neutral-300 font-mono">
+    <p> </p>
+    <main class="flex-auto">
+      <div class="max-w-full py-10 px-12">
+        <div id="inputContainer" class="flex flex-col gap-4">
+          <div> 
+          <div id="actionContainer" class="flex flex-row gap-4">
+            <div id="actionButtonsContainer" class="flex flex-col gap-4 w-1/2"> 
+              <div id="sessionMgmtContainer" class="flex gap-2">
+                <button class="btn actionBtn saveContext">save</button>
+                <button class="hidden btn actionBtn autoSaveContext">auto</button>
+                <button class="btn actionBtn loadContext">load</button>
+                <button class="btn actionBtn appendContext">append</button>
+                <input class="inputForm sessionForm" class="" placeholder="session name"></input>
+              </div>
+              <div class="flex gap-2">
+                <button class="btn taskBtn ingestFunction">inFunc</button>
+                <button class="btn taskBtn ingestClass hidden">inClass</button>
+                <button class="btn taskBtn createCode">new</button>
+                <button class="btn taskBtn updateCode">update</button>
+                <button class="btn taskBtn deleteCode">del</button>
+                
+              </div> 
+              <div class="flex gap-2"> 
+                <button class="hidden btn taskBtn refactor">refactor</button>
+                <button class="btn taskBtn chatCode">chat</button>
+                <button class="btn taskBtn chatUpdate">chatUpdate</button>
+                <button class="hidden btn taskBtn chatCode">designChat</button>
+              </div>           
+              <div id="attrContextUse" class="hidden flex flex-row gap-2 mt-6">
+                <!-- <div class="py-2">ctx:</div> -->
+                <button class="btn descriptionAttrUse">desc</button>
+                <button class="btn typeAttrUse">type</button>
+                <button class="btn inputAttrUse">in</button>
+                <button class="btn outputAttrUse">output</button>
+                <button class="btn stepsAttrUse">steps</button>
+                <button class="btn codeAttrUse">code</button>
+                <button class="btn function_callsAttrUse">calls</button>
+              </div>            
+  
+            </div>
+            <div id="inputFormContainer" class="flex gap-4 w-1/2">
+              <textarea class="inputForm taskForm inputForm-taskInput min-w-full" rows="6" placeholder="input"></textarea>
+            </div>
+          </div>
+        <div id='displayContainer' class="flex flex-row gap-4 mt-6 pt-12 mb-12 border-t border-neutral-700">
+          <div id="elemListDisplay" class="flex flex-col gap-4 w-2/5"></div>
+          <div id="outputDisplay" class="flex flex-col gap-4 w-3/5"> 
+            <div id="outputDisplayBtns" class="flex flex-row gap-4">
+              <button class="btn displayBtn displayElem">elemView</button>
+              <button class="btn displayBtn displayChat">chatView</button>
+            </div>
+            <div id="outputDisplayContainer" class="flex flex-col gap-4 border border-neutral-600 rounded-md px-4 py-2 min-h-full">
+              <div id="elemAttrDisplay" class="elemAttrDisplay"></div>
+              <div id="chatDisplay" class="chatDisplay hidden"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+
